@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-#  Malisiewicz et al.
+# This functionality  have been taken from version of Malisiewicz et al.
 def nonMaximumSuppression(boundingBoxes, overlapThresh):
     
     if boundingBoxes.shape[0] == 0 :

@@ -1,3 +1,13 @@
+'''
+This is the region detection driver
+0. Filtered PASCAL VOC dataset with only classes that appears in CIFAR10 dataset
+1. It uses A_A_selectiveSearchFilter selective search to get the regions proposals
+2. Preprocess the regions proposed using zcaParams.pkl which has the preprocessing
+    params from trained data used to ZCA preprocess test data
+3. It exports the regions extracted as the test data 
+'''
+
+
 import numpy as np
 import cPickle
 import time
@@ -31,6 +41,7 @@ vocTrainAnnPath = '../datasets/VOC2012trainval/VOC2012/Annotations'
                  ('boat','ship'),
                  ('bus','truck')]'''
 
+''' This maps the CIFAR10 images to PASCAL VOC image set'''
 voc_cifar_map = {'aeroplane':'airplane',
                  'car':'automobile',
                  'bird':'bird',
@@ -47,6 +58,8 @@ testDtFileName = "test0.5.pkl"    #tochange
 
     
 def getAnnotations(path=vocTrainAnnPath):
+    '''To extract the annotations and map it to the PASCAL VOC images
+    '''
 
     #--------- GET LIST OF ALL FILES IN THE PATH ----------
     files = []

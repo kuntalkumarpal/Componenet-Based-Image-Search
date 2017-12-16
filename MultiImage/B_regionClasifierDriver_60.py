@@ -1,3 +1,10 @@
+'''
+This is the Classifier Driver for the detected regions
+It uses
+1. B_A_Classifier - Uses pre-trained parameters 6060_1000_200_0.01_10.0.pkl and regions detected test.pkl
+2. B_B_Evaluator - Orders the image set based on matches with detected regions
+'''
+
 import cPickle
 import numpy as np
 import theano

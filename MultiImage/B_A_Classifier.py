@@ -11,8 +11,7 @@ from theano.tensor.nnet import conv
 from theano.tensor.nnet import sigmoid
 from theano.tensor.nnet import softmax
 
-#from theano.tensor.signal import downsample
-from theano.tensor.signal import pool
+from theano.tensor.signal import downsample
 from theano.tensor import shared_randomstreams
 
 import time
@@ -62,7 +61,7 @@ class ConvPoolLayer(object):
                                        image_shape=self.imgShape
                                   )
         #ds - downsize
-        pooledOutput = pool.pool_2d( input=convOutput,
+        pooledOutput = downsample.max_pool_2d( input=convOutput,
                                                ds=self.poolSize, 
                                                ignore_border=True
                                                )
