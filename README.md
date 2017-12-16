@@ -20,12 +20,13 @@ B_B_Evaluator.py                : Evaluates the classifier. Functionalities incl
 
 ## Prerequisite
 ### Technical
-python
 ```
+python
 **cuda** sudo apt-get install nvidia-cuda-toolkit
 **opencv** sudo apt-get install python-opencv
 **theano** http://deeplearning.net/software/theano/install.html
 **selective search** pip install selectivesearch
+CIFAR10 dataset
 ```
 
 ### Detection part
